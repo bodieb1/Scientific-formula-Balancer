@@ -11,13 +11,14 @@ public class Element {
     private final int atomicNumber;
     private final String fullName;
     private final double atomicMass;
-    private final double meltingPoint;
+    private double meltingPoint;
+    private boolean isLuster;
+    private boolean isRadioactive;
 
-    private Element(int atomicNumber, String fullName, double atomicMass, double meltingPoint) {
+    public Element(int atomicNumber, String fullName, double atomicMass) {
         this.atomicNumber = atomicNumber;
         this.fullName = fullName;
         this.atomicMass = atomicMass;
-        this.meltingPoint = meltingPoint;
         Holder.map.put(atomicNumber, this);
     }
 
@@ -39,5 +40,21 @@ public class Element {
 
     public double getMeltingPoint() {
         return meltingPoint;
+    }
+    public boolean isLuster() {
+    	return isLuster;
+    }
+    public boolean isRadioactive(){
+    	return isRadioactive;
+    }
+    
+    public void setMeltingPoint(double meltingPoint) {
+    	this.meltingPoint = meltingPoint;
+    }
+    public void setLuster(boolean isLuster) {
+    	this.isLuster = isLuster;
+    }
+    public void setRadioactive(boolean isRadioactive){
+    	this.isRadioactive = isRadioactive;
     }
 }
